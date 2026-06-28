@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Parkinsans", san-serif; */
+}
+
+html {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    width: 100%;
+    background-color: rgba(2, 2, 40, 0.938);
+    /* background-color: white; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 65rem;
+    position: relative;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    width: 65rem;
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    justify-content: space-between;
+
+    border: 0.4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.8rem;
+    z-index: 100;
+
+    font-family: "Parkinsans", san-serif;
+    color: white;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.15) 30%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.4)90%);
+    backdrop-filter: blur(10px) saturate(140%);
+}
+
+.navbar_title {
+    cursor: pointer;
+}
+
+.menu_container {
+    flex: 1;
+}
+
+.navbar_menu {
+    width: 100%;
+    padding: 0 10rem;
+    justify-content: space-around;
+
+    list-style: none;
+}
+
+.navbar_menu_items {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar_menu_items::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: 100%;
+    bottom: -3px;
+    
+    transition: 0.3s linear;
+}
+
+.navbar_menu_items:hover::before {
+    right: -2px;
+    border: 1px solid white;
+}
+
+.navbar_button button {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(50deg, rgb(68, 123, 225), rgb(128, 173, 255));
+    transition: 0.2s ease-in;
+}
+
+.navbar_button button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.menu_btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+}
+
+.mode {
+    width: 3rem;
+    height: 1.5rem;
+    padding: 0 0.2rem 0 0.2rem;
+    justify-content: flex-start;
+    border-radius: 0.8rem;
+
+    background: url("../src/sun.png");
+    background-size: cover;
+}
+
+.mode_change {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s linear;
+
+    background-color: rgb(83, 143, 255);
+}
+
+/* footer -------------------------------------------------------------------------------------------------------- */
+
+footer {
+    position: relative; 
+    width: 100%;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+
+    font-family: "Parkinsans", san-serif;
+    color: white;
+}
+
+footer h2::before {
+    content: '';
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 54%;
+
+    height: 1.5px;
+    background-color: white;
+}
+
+footer h2::after {
+    content: '';
+    position: absolute;
+    top: 28%;
+    left: 54%;
+    right: 0;
+
+    height: 1.5px;
+    background-color: white;
+}
+
+
+/* loader --------------------------------------------------------------------------------------------------------------------------- */
+
+.loader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    z-index: 999;
+
+    background-color: rgba(2, 2, 40, 1);
+}
+
+.loader_hidden {
+    animation: fadeOut 1s;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    animation: pulse 1.2s ease-in-out infinite;
+
+    border-radius: 50%;
+    background-color: rgb(75, 138, 255);
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
