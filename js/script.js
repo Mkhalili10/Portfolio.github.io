@@ -50,12 +50,12 @@ window.addEventListener("resize", function(){
 })
 
 
-window.addEventListener('click', function (event) {
+/*window.addEventListener('click', function (event) {
     if(event.pageY > 250) {
         navbar.style.height = "3.45rem"
         menu_flage = 0
     }
-})
+})*/
 
 
 // menu avtivate --------------------------------------------------------------------------------------------------------------
